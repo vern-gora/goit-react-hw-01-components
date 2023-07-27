@@ -1,0 +1,21 @@
+.transaction {
+  justify-content: center;
+  display: flex;
+}
+
+.transactionHistory {
+  width: 320px;
+  border-radius: 15px;
+  color: rgb(55, 55, 63);
+  text-align: left;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+table th,
+table td {
+  padding: 10px;
+  border: 1px solid #2a2a2a;
+}
