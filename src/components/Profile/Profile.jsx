@@ -1,7 +1,13 @@
 import PropTypes from 'prop-types';
 import css from './Profile.module.css';
 
-const Profile = ({ username, tag, location, avatar, stats }) => {
+const Profile = ({
+  username,
+  tag,
+  location,
+  avatar,
+  stats: { followers, views, likes },
+}) => {
   return (
     <section className={css.profile}>
       <div className={css.description}>
@@ -14,15 +20,15 @@ const Profile = ({ username, tag, location, avatar, stats }) => {
       <ul className={css.stats}>
         <li className={css.statsList}>
           <span className={css.label}>Followers </span>
-          <span className={css.quantity}>{stats.followers}</span>
+          <span className={css.quantity}>{followers}</span>
         </li>
         <li className={css.statsList}>
           <span className={css.label}>Views </span>
-          <span className={css.quantity}>{stats.views}</span>
+          <span className={css.quantity}>{views}</span>
         </li>
         <li className={css.statsList}>
           <span className={css.label}>Likes </span>
-          <span className={css.quantity}>{stats.likes}</span>
+          <span className={css.quantity}>{likes}</span>
         </li>
       </ul>
     </section>
@@ -38,7 +44,7 @@ Profile.propTypes = {
     followers: PropTypes.number.isRequired,
     views: PropTypes.number.isRequired,
     likes: PropTypes.number.isRequired,
-  }),
+  }).isRequired,
 };
 
 export default Profile;

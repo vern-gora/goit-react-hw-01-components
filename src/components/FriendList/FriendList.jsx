@@ -5,23 +5,18 @@ const FriendList = ({ friends }) => {
   return (
     <section className={css.friends}>
       <ul className={css.friendList}>
-        {friends.map(friend => (
-          <li className={css.item} key={friend.id}>
+        {friends.map(({ id, isOnline, name, avatar }) => (
+          <li className={css.item} key={id}>
             <span
               className={css.status}
               style={{
-                backgroundColor: friend.isOnline ? '#25fa7e' : '#fa5732',
+                backgroundColor: isOnline ? '#25fa7e' : '#fa5732',
               }}
             >
-              {friend.isOnline}
+              {isOnline}
             </span>
-            <img
-              className={css.avatar}
-              src={friend.avatar}
-              alt={friend.name}
-              width="48"
-            />
-            <p className={css.name}>{friend.name}</p>
+            <img className={css.avatar} src={avatar} alt={name} width="48" />
+            <p className={css.name}>{name}</p>
           </li>
         ))}
       </ul>
@@ -32,12 +27,12 @@ const FriendList = ({ friends }) => {
 FriendList.propTypes = {
   friends: PropTypes.arrayOf(
     PropTypes.exact({
-      avatar: PropTypes.string,
-      name: PropTypes.string,
-      isOnline: PropTypes.bool,
-      id: PropTypes.number,
-    })
-  ),
+      avatar: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      isOnline: PropTypes.bool.isRequired,
+      id: PropTypes.number.isRequired,
+    }).isRequired
+  ).isRequired,
 };
 
 export default FriendList;
