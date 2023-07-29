@@ -1,11 +1,11 @@
-.friendList {
+/* .friendList {
   display: flex;
   gap: 20px;
   flex-wrap: wrap;
   padding-bottom: 25px;
-}
+} */
 
-/* .item {
+.item {
   width: 200px;
   display: flex;
   gap: 15px;
@@ -30,7 +30,6 @@
   border-radius: 50%;
   background-color: #fa5732;
 }
-
 .avatar {
   background-color: antiquewhite;
   padding: 20px;
@@ -40,4 +39,4 @@
 .name {
   font-weight: bold;
   font-size: 16px;
-} */
+}
